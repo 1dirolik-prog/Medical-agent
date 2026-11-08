@@ -1,0 +1,14 @@
+{
+  "name": "Family Medical AI Agent",
+  "description": "A comprehensive family health assistant for analyzing labs, tracking symptoms, and AI-powered medical insights with multi-user family sync.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API",
+    "AI Medical Analysis",
+    "Multi-user Family Management",
+    "Chronological Health Timeline",
+    "Wearable Integration Sync"
+  ]
+}

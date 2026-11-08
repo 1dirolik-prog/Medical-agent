@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-medical-green: #10B981;
+  --color-medical-yellow: #F59E0B;
+  --color-medical-red: #EF4444;
+  --color-medical-blue: #3D5AFE;
+  --color-medical-bg: #F3F4F6;
+  
+  --font-sans: "Inter", "system-ui", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-medical-bg);
+    color: #1E293B;
+  }
+}
+
+@media print {
+  html, body, #root, .h-screen {
+    height: auto !important;
+    overflow: visible !important;
+    background: white !important;
+  }
+  .overflow-y-auto, .overflow-hidden {
+    overflow: visible !important;
+  }
+  .flex-col {
+    display: block !important;
+  }
+  nav, button, header {
+    display: none !important;
+  }
+  .max-w-md {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  @page { margin: 0.5cm; }
+}
+
+.dark body {
+  --color-medical-bg: #0f172a;
+  color: #f8fafc;
+}
+
+.card-android {
+  @apply bg-white dark:bg-slate-800 rounded-3xl p-4 shadow-sm border border-slate-100 dark:border-slate-700;
+}
+
+.bottom-nav-item {
+  @apply flex flex-col items-center justify-center p-2 text-slate-400 dark:text-slate-500 transition-colors;
+}
+
+.bottom-nav-item.active {
+  @apply text-medical-blue dark:text-medical-blue;
+}
+
+.avatar-active {
+  @apply ring-2 ring-medical-blue ring-offset-2 dark:ring-offset-slate-900;
+}
+
+.risk-dot {
+  @apply w-2 h-2 rounded-full;
+}
+
+.timeline-line {
+  @apply absolute left-4 top-0 bottom-0 w-0.5 bg-slate-100 dark:bg-slate-700 -z-10;
+}
